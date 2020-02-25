@@ -1,14 +1,11 @@
 package net.greet;
 
-import java.util.HashMap;
 
 public interface Greeting {
 
-    String greeter(String name);
+    String greeter(String name, String language);
     int counter();
     String greeted();
 
-    default HashMap greetedUser() {
-        return null;
-    }
+     String greetedUser(String uniqueUser);
 }
