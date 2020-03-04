@@ -14,6 +14,19 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<groupId>net.greet</groupId>
@@ -31,7 +44,10 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
 	</build>
+
+
 
 	<name>greet-in-java</name>
 	<description>Greetings</description>

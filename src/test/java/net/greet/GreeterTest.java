@@ -9,7 +9,6 @@ public class GreeterTest {
     @Test
    public void shouldGreetName(){
         Greeter greet = new Greeter();
-        greet.greeter("Lucy", "English");
 
         assertEquals("Hello, Lucy", greet.greeter("Lucy", "English"));
     }
@@ -54,4 +53,15 @@ public class GreeterTest {
         assertEquals("Sino 3", greet.greetedUser("Sino"));
     }
 
+
+
+    @Test
+    public void shouldClear() {
+        Greeter greet = new Greeter();
+        greet.greeter("Sino", "English");
+        greet.greeter("Lala", "Afrikaans");
+        greet.clear();
+
+        assertEquals("{}", greet.greeted() );
+    }
 }

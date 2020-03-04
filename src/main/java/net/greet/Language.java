@@ -12,6 +12,6 @@ public enum Language {
     }
 
     public String getMyLanguage(){
-        return myLanguage;
+        return this.myLanguage;
     }
 }
