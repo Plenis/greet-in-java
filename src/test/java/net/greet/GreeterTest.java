@@ -36,6 +36,7 @@ public class GreeterTest {
         greet.greeter("Lolo", "IsiXhosa");
         greet.greeter("Lucy", "IsiXhosa");
 
+        System.out.println(greet.greeted());
         assertEquals("{Sino=1, Lolo=1, Lucy=1}", greet.greeted());
     }
 
@@ -51,6 +52,7 @@ public class GreeterTest {
         greet.greeter("Lucy", "IsiXhosa");
 
         assertEquals("Sino 3", greet.greetedUser("Sino"));
+        assertEquals("Lolo 2", greet.greetedUser("Lolo"));
     }
 
 
@@ -60,8 +62,20 @@ public class GreeterTest {
         Greeter greet = new Greeter();
         greet.greeter("Sino", "English");
         greet.greeter("Lala", "Afrikaans");
-        greet.clear();
+        greet.clearAll();
 
         assertEquals("{}", greet.greeted() );
+    }
+
+    @Test
+    public void shouldClearUser(){
+        Greeter greet = new Greeter();
+        greet.greeter("Sino", "English");
+        greet.greeter("Andy", "IsiXhosa");
+        greet.greeter("Andiswa", "English");
+
+        assertEquals("User: Sino has been cleared!", greet.clearUser("Sino") );
+        System.out.println(greet.greeted() + "greee");
+        assertEquals("Andy", greet.greeted());
     }
 }

@@ -13,7 +13,6 @@ public class Greeter implements Greeting{
 
         if(userName.containsKey(name)){
             userName.put(name, userName.get(name) + 1);
-
         } else {
             userName.put(name, 1);
         }
@@ -25,27 +24,50 @@ public class Greeter implements Greeting{
     }
 
     public String greeted(){
-        return String.valueOf(userName);
+//        System.out.println(userName.toString());
+        return userName.toString();
     }
 
     public String greetedUser(String uniqueUser){
-       int counter = 0;
+
+      int counter = 0;
 
     // .containsKey() checks the userNames for duplicates.
     // .get() gets the value of each key/counter 'String'/userName greeted
+        if(userName.isEmpty()){
+            System.out.println("This name is not available");
+        }
 
-        if(userName.containsKey(uniqueUser)) {
+        else if(userName.containsKey(uniqueUser)) {
            counter = userName.get(uniqueUser);
         }
 
-        return uniqueUser +" " + counter;
+        return uniqueUser + " " + counter;
     }
 
-//    public void clearUser(String user){
-//
-//    }
 
-    public void clear(){
+    public String clearUser(String user){
+        String name = null;
+        if(userName.containsKey(user)) {
+            System.out.println("USER: " + user);
+          name = String.valueOf(userName.get(user));
+          return name.re
+        }
+       // System.out.print("User: " + user + "has been cleared!");
+        return "User: " + user + " has been cleared!";
+    }
+
+    public void clearAll(){
         userName.clear();
     }
+//
+//    @Override
+//    public String clearUser() {
+//        return null;
+//    }
+
+//    @Override
+//    public String clearUser() {
+//        return null;
+//    }
 }
