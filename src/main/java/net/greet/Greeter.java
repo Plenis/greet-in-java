@@ -46,16 +46,16 @@ public class Greeter implements Greeting{
     }
 
 
-    public String clearUser(String user){
-        String name = null;
-        if(userName.containsKey(user)) {
-            System.out.println("USER: " + user);
-          name = String.valueOf(userName.get(user));
-          return name.re
-        }
+//    public String clearUser(String user){
+//        String name = null;
+//        if(userName.containsKey(user)) {
+//            System.out.println("USER: " + user);
+//          name = String.valueOf(userName.get(user));
+//          return
+//        }
        // System.out.print("User: " + user + "has been cleared!");
-        return "User: " + user + " has been cleared!";
-    }
+//        return "User: " + user + " has been cleared!";
+//    }
 
     public void clearAll(){
         userName.clear();
