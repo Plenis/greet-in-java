@@ -4,15 +4,12 @@ import java.util.Scanner;
 
 public class Greet{
     static String command;
-    static String name;
-    static String language;
-    static int counter = 0;
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("========= WELCOME TO THE GREET CONSOLE ========");
-
+        Greeter greet = new Greeter();
 
         boolean exit = true;
 
@@ -30,35 +27,30 @@ public class Greet{
                 return;
             }
 
-            if (input.length >= 2) {
-                name = input[1];
-            } else {
-                name = "";
-                counter ++;
-            }
-
-            if (input.length >= 3) {
-                language = input[2];
-            } else {
-                language = "English";
-            }
-
-            Greeter greet = new Greeter();
-            String greetUser = greet.greeter(name, language);
-            String greetedUser = greet.greetedUser(name);
-            String greeted = greet.greeted();
-
-            if (command.equals("greet")) {
-                System.out.println(greetUser);
-            }
-                if (command.equals("greeted")) {
-
-                       System.out.println(greeted);
-                   }
-                else if(command.equals("greeted" + name)){
-                    System.out.println(greetedUser);
+            if(command.equals("greet")) {
+                try {
+                    System.out.println(greet.greeter(input[1], input[2]));
+                }catch (Exception e) {
+                    System.out.println("missing required commands");
                 }
-               }
+            }
+
+            if(command.equals("greeted")) {
+                if(input.length > 1) {
+                    System.out.println(greet.greetedUser(input[1]));
+                } else {
+                    System.out.println(greet.greeted());
+                }
+            }
+
+            if(command.equals("clear")){
+                if(input.length > 1){
+                    System.out.println(greet.clearUser(input[1]));
+                }else {
+                    System.out.println(greet.clearAll());
+                }
+            }
+          }
 
         }
     }

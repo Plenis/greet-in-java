@@ -64,18 +64,19 @@ public class GreeterTest {
         greet.greeter("Lala", "Afrikaans");
         greet.clearAll();
 
-        assertEquals("{}", greet.greeted() );
+        assertEquals("{}", greet.greeted());
     }
 
     @Test
     public void shouldClearUser(){
         Greeter greet = new Greeter();
         greet.greeter("Sino", "English");
+        greet.greeter("Sino", "Afrikaans");
         greet.greeter("Andy", "IsiXhosa");
+        greet.greeter("Andiswa", "English");
         greet.greeter("Andiswa", "English");
 
         assertEquals("User: Sino has been cleared!", greet.clearUser("Sino") );
-        System.out.println(greet.greeted() + "greee");
-        assertEquals("Andy", greet.greeted());
+        assertEquals("{Andiswa=2, Andy=1}", greet.greeted());
     }
 }
