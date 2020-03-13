@@ -10,7 +10,7 @@ public class GreeterTest {
    public void shouldGreetName(){
         Greeter greet = new Greeter();
 
-        assertEquals("Hello, Lucy", greet.greeter("Lucy", "English"));
+        assertEquals("Hello, Lucy!", greet.greeter("Lucy", "English"));
     }
 
     @Test
@@ -21,11 +21,12 @@ public class GreeterTest {
         greet.greeter("Shasha", "IsiXhosa");
         greet.greeter("Shasha", "Afrikaans");
         greet.greeter("Yala", "IsiXhosa");
+        greet.greeter("Yamkela", "Setswana");
 
-        assertEquals(3, greet.counter());
-        assertEquals("Lala 2", greet.greetedUser("Lala"));
-        assertEquals("Gooi dag, Lala", greet.greeter("Lala", "Afrikaans"));
-        assertEquals("Molo, Shasha", greet.greeter("Shasha",  "IsiXhosa"));
+        assertEquals(4, greet.counter());
+        assertEquals("Lala has been greeted 2 time(s)", greet.greetedUser("Lala"));
+        assertEquals("Gooi dag, Lala!", greet.greeter("Lala", "Afrikaans"));
+        assertEquals("Dumela, Yamkela!", greet.greeter("Yamkela",  "Setswana"));
     }
 
     @Test
@@ -51,8 +52,8 @@ public class GreeterTest {
         greet.greeter("Lolo", "Afrikaans");
         greet.greeter("Lucy", "IsiXhosa");
 
-        assertEquals("Sino 3", greet.greetedUser("Sino"));
-        assertEquals("Lolo 2", greet.greetedUser("Lolo"));
+        assertEquals("Sino has been greeted 3 time(s)", greet.greetedUser("Sino"));
+        assertEquals("Lolo has been greeted 2 time(s)", greet.greetedUser("Lolo"));
     }
 
 
@@ -75,8 +76,8 @@ public class GreeterTest {
         greet.greeter("Andy", "IsiXhosa");
         greet.greeter("Andiswa", "English");
         greet.greeter("Andiswa", "English");
+        greet.clearUser("Sino");
 
-        assertEquals("User: Sino has been cleared!", greet.clearUser("Sino") );
         assertEquals("{Andiswa=2, Andy=1}", greet.greeted());
     }
 }

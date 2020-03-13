@@ -8,5 +8,4 @@ public interface Greeting {
     String greeted();
     String greetedUser(String uniqueUser);
     String clearAll();
-//    String clearUser(String user);
 }

@@ -19,40 +19,46 @@ public class Greet{
 
             String[] input = command.split(" ");
 
-            command = input[0];
+            command = input[0].toLowerCase();
 
-            if(command.equals("exit")) {
+            if (command.equals("exit")) {
                 exit = false;
                 System.out.println("Goodbye");
                 return;
             }
 
             if(command.equals("greet")) {
+                String nameOutput = input[1].substring(0, 1).toUpperCase() + input[1].substring(1);
                 try {
-                    System.out.println(greet.greeter(input[1], input[2]));
-                }catch (Exception e) {
-                    System.out.println("missing required commands");
+                    System.out.println(
+                            greet.greeter(nameOutput, input[2])
+                    );
+                } catch (Exception e) {
+                    System.out.println(greet.greeter(nameOutput, "IsiXhosa"));
                 }
             }
 
-            if(command.equals("greeted")) {
-                if(input.length > 1) {
-                    System.out.println(greet.greetedUser(input[1]));
-                } else {
-                    System.out.println(greet.greeted());
+                if (command.equals("greeted")) {
+                    if (input.length > 1) {
+                        System.out.println(greet.greetedUser(input[1]));
+                    } else {
+                        System.out.println(greet.greeted());
+                    }
                 }
-            }
 
-            if(command.equals("clear")){
-                if(input.length > 1){
-                    System.out.println(greet.clearUser(input[1]));
-                }else {
-                    System.out.println(greet.clearAll());
+                if (command.equals("clear")) {
+                    if (input.length > 1) {
+                        System.out.println(greet.clearUser(input[1]));
+                    } else {
+                        System.out.println(greet.clearAll());
+                    }
                 }
-            }
-          }
 
+                if(command.equals("help")){
+                    System.out.println(greet.help());
+                }
         }
     }
+}
 
 
