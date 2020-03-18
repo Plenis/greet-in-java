@@ -15,7 +15,7 @@ public class Greeter implements Greeting{
         try {
             return Language.valueOf(language).getMyLanguage() + name.charAt(0) + name.substring(1) + "!";
         }catch (Exception e){
-            return Language.valueOf("IsiXhosa").getMyLanguage() + name.charAt(0) + name.substring(1) + "!";
+            return Language.valueOf("IsiXhosa").getMyLanguage() + name.charAt(0) + name.substring(1) + "!\nGreeted in default language!";
         }
     }
 
@@ -49,7 +49,7 @@ public class Greeter implements Greeting{
 
     public String clearAll(){
         userName.clear();
-        return null;
+        return "-----------------------------\nAll users have been cleared!\n-----------------------------";
     }
 
     public String help(){

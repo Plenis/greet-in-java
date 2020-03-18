@@ -38,11 +38,15 @@ public class Greet{
                 }
             }
 
+
                 if (command.equals("greeted")) {
                     if (input.length > 1) {
                         System.out.println(greet.greetedUser(input[1]));
                     } else {
                         System.out.println(greet.greeted());
+                    }
+                    if(greet.greeted().equals("{}")){
+                        System.out.println("--------------------------\nNo users greeted!\nPlease greet a user :)\n-------------------------");
                     }
                 }
 
