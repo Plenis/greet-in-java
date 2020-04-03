@@ -7,5 +7,7 @@ public interface Greeting {
     int counter();
     String greeted();
     String greetedUser(String uniqueUser);
+    String clearUser(String uniqueUser);
     String clearAll();
+    String help();
 }

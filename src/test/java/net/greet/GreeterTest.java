@@ -38,7 +38,6 @@ public class GreeterTest {
         greet.greeter("Lolo", "IsiXhosa");
         greet.greeter("Lucy", "IsiXhosa");
 
-        System.out.println(greet.greeted());
         assertEquals("{Sino=1, Lolo=1, Lucy=1}", greet.greeted());
     }
 
