@@ -3,18 +3,20 @@ package net.greet;
 
 import java.util.HashMap;
 
-public class Greeter implements Greeting{
-    private HashMap<String, Integer> userName = new HashMap<String, Integer>();
+public class Greeter implements Greeting {
+    private HashMap<String, Integer> userName = new HashMap<>();
 
-    public String greeter(String name, String language){
-        if(userName.containsKey(name)){
+    public String greeter(String name, String language) {
+        if (userName.containsKey(name)) {
             userName.put(name, userName.get(name) + 1);
         } else {
             userName.put(name, 1);
         }
-        try {
+        try
+        {
             return Language.valueOf(language).getMyLanguage() + name.charAt(0) + name.substring(1) + "!";
-        }catch (Exception e){
+        }
+        catch (Exception e){
             return Language.valueOf("IsiXhosa").getMyLanguage() + name.charAt(0) + name.substring(1) + "!\nGreeted in default language!";
         }
     }
@@ -41,9 +43,7 @@ public class Greeter implements Greeting{
     }
 
     public String clearUser(String user){
-        if(userName.containsKey(user)) {
-            userName.remove(user);
-        }
+        userName.remove(user);
         return "User: " + user + " has been cleared!";
     }
 
