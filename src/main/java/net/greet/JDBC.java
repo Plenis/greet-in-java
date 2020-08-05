@@ -138,6 +138,7 @@ public class JDBC implements Greeting{
     public String clearUser(String uniqueUser) {
         try {
             psDeleteUser.setString(1, uniqueUser);
+            psDeleteUser.execute();
             psDeleteUser.executeUpdate();
         }
         catch (SQLException sqlEx){
@@ -149,6 +150,7 @@ public class JDBC implements Greeting{
     @Override
     public String clearAll() {
         try{
+            psDeleteAllUsers.execute();
             psDeleteAllUsers.executeUpdate();
         }
         catch (SQLException sqlEx){
