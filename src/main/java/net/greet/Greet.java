@@ -7,7 +7,8 @@ public class Greet {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("========= WELCOME TO THE GREET CONSOLE ========");
-        Greeter greet = new Greeter();
+//        Greeter greet = new Greeter();
+        Greeting greet = new JDBC();
         CommandProcessor commandExtractor = new CommandProcessor(greet);
 
         while (true) {
@@ -16,6 +17,7 @@ public class Greet {
             CommandExtractor commandProcessor = new CommandExtractor(input);
 
             if (commandProcessor.getCommand().equals("exit")) {
+                System.out.println("======= THANK YOU FOR USING THE GREET CONSOLE =======");
                 break;
             } else {
                 System.out.println(commandExtractor.processCommands(commandProcessor));
