@@ -51,8 +51,6 @@ public class JDBC implements Greeting{
     }
 
 
-    HashMap<String, Integer> userName = new HashMap<>();
-
     public void addName(String name){
         try {
             psFindUser.setString(1, name);
@@ -85,6 +83,7 @@ public class JDBC implements Greeting{
 
     @Override
     public int counter() {
+        HashMap<String, Integer> userName = new HashMap<>();
 
         try{
             ResultSet resultSetName = psGreetedUsers.executeQuery();
@@ -100,6 +99,7 @@ public class JDBC implements Greeting{
 
     @Override
     public String greeted() {
+        HashMap<String, Integer> userName = new HashMap<>();
 
         try{
             ResultSet resultSetName = psGreetedUsers.executeQuery();
@@ -114,6 +114,7 @@ public class JDBC implements Greeting{
 
     @Override
     public String greetedUser(String uniqueUser) {
+        HashMap<String, Integer> userName = new HashMap<>();
 
         try{
             ResultSet resultSet = psGreetedUsers.executeQuery();
@@ -139,7 +140,6 @@ public class JDBC implements Greeting{
         try {
             psDeleteUser.setString(1, uniqueUser);
             psDeleteUser.execute();
-            psDeleteUser.executeUpdate();
         }
         catch (SQLException sqlEx){
             sqlEx.printStackTrace();
@@ -151,7 +151,6 @@ public class JDBC implements Greeting{
     public String clearAll() {
         try{
             psDeleteAllUsers.execute();
-            psDeleteAllUsers.executeUpdate();
         }
         catch (SQLException sqlEx){
             sqlEx.printStackTrace();
