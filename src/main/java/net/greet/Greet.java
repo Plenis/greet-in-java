@@ -9,18 +9,18 @@ public class Greet {
         System.out.println("========= WELCOME TO THE GREET CONSOLE ========");
 //        Greeter greet = new Greeter();
         Greeting greet = new JDBC();
-        CommandProcessor commandExtractor = new CommandProcessor(greet);
+        CommandProcessor commandProcessor = new CommandProcessor(greet);
 
         while (true) {
             System.out.print("Enter a command: ");
             String input = scanner.nextLine();
-            CommandExtractor commandProcessor = new CommandExtractor(input);
+            CommandExtractor commandExtractor = new CommandExtractor(input);
 
-            if (commandProcessor.getCommand().equals("exit")) {
+            if (commandExtractor.getCommand().equals("exit")) {
                 System.out.println("======= THANK YOU FOR USING THE GREET CONSOLE =======");
                 break;
             } else {
-                System.out.println(commandExtractor.processCommands(commandProcessor));
+                System.out.println(commandProcessor.processCommands(commandExtractor));
             }
         }
     }
