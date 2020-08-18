@@ -15,17 +15,6 @@ class CommandProcessorTest {
         assertEquals("Molo, Sino", commandProcessor.processCommands(command));
     }
 
-    @Test
-    void shouldGetUserCounter(){
-        Greeting greet = new JDBC();
-        new CommandExtractor("greet sino");
-        new CommandExtractor("greet sino");
-
-        CommandExtractor command = new CommandExtractor("greeted Sino");
-        CommandProcessor commandProcessor = new CommandProcessor(greet);
-
-        assertEquals("Sino has been greeted 2 time(s)", commandProcessor.processCommands(command));
-    }
 
     @Test
     void shouldClearUser(){
